@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+   <script
+  src="https://code.jquery.com/jquery-1.11.1.min.js"
+  integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE="
+  crossorigin="anonymous"></script>
+  
+  <script>
+  
+// global variable
+var graphCanvas1;
+
+  $(document).ready(function () {
+  //Animated graphs init
+	var graphline0 = {                    //graph line object with its properties.
+			name: "projekty",
+			color: "#f80bca",
+			startColor: "#381457",
+			endColor: "#f80bca",
+			width:2,
+			cords:[[5,360],[5,360],[5,300],[100,300],[100,220],[200,220],[200,140],[280,140]],
+			speed:60,
+			circleWidth:1,
+			endCircle: 5,
+			InterCords: new Array(),
+			counter: document.getElementById("counter1"),
+			counterNumber: 81589,
+			line_interval: 4
+		};
+
+	graphCanvas1 = new GraphMain(document.getElementById("graphCanvas1"), 1, graphline0, null, null);
+	graphCanvas1.startDrawing();
+});
+	
+function hideTitle(id) {
+	$("#"+id).hide();
+}
+
+function showTitle(id) {
+	$("#"+id).fadeIn();
+}
+  
+  </script>
+
+</head>
+
+<body>
+  
+  <canvas width="630" height="360" id="graphCanvas1"></canvas>
+  <span class="counterText" id="counter1">776</span>
+  
+
+<script type="text/javascript" src="./graphs.js"></script>
+</body>
+</html>
+
